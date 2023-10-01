@@ -20,7 +20,7 @@ mongoose.connect(DATABASE_URL, {
 
 app.use(cors({
   credentials: true,
-  origin: [/*'https://practical.mesto.students.nomoredomainsrocks.ru'*/'http://localhost:3001'],
+  origin: ['http://localhost:3001'],
 }));
 app.use(helmet());
 app.use(bodyParser.json());
