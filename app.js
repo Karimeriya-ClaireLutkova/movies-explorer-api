@@ -2,11 +2,11 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
-
 const cors = require('cors');
 const { celebrate, Joi, errors } = require('celebrate');
 const routerUsers = require('./routes/users');
 const routerMovies = require('./routes/movies');
+const auth = require('./middlewares/auth');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -19,6 +19,7 @@ app.use(cors({
   origin: [/*'https://practical.mesto.students.nomoredomainsrocks.ru'*/'http://localhost:3001'],
 }));
 app.use(bodyParser.json());
+app.use(auth);
 app.use(routerUsers);
 app.use(routerMovies);
 app.use(errors());
