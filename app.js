@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const helmet = require('helmet');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
 const cors = require('cors');
@@ -21,6 +22,7 @@ app.use(cors({
   credentials: true,
   origin: [/*'https://practical.mesto.students.nomoredomainsrocks.ru'*/'http://localhost:3001'],
 }));
+app.use(helmet());
 app.use(bodyParser.json());
 app.use(requestLogger);
 app.post('/signin', celebrate({
