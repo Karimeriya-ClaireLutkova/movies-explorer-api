@@ -27,12 +27,12 @@ const movieSchema = new mongoose.Schema(
     nameRU: {
       type: String,
       required: true,
-      validate: /[я-яё0-9\.\-]/gi,
+      validate: /[я-яё0-9.-]/gi,
     },
     nameEN: {
       type: String,
       required: true,
-      validate: /[a-z0-9\.\-]/gi,
+      validate: /[a-z0-9.-]/gi,
     },
     image: {
       type: String,
@@ -42,7 +42,7 @@ const movieSchema = new mongoose.Schema(
     trailerLink: {
       type: String,
       required: true,
-      validate: /^(http[s]?:\/\/(www\.)?[-a-zA-Z0-9@:%_\+.~#?&\/\/=]+)+\.?(?: mp4|mov|ts|mkv|avi|wmv)?/i,
+      validate: /^(http[s]?:\/\/(www\.)?(?:[-a-zA-Z0-9@:%_+.~/#?&=]+))+\.?(?: mp4|mov|ts|mkv|avi|wmv)?/i,
     },
     thumbnail: {
       type: String,

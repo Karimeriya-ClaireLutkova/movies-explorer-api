@@ -15,7 +15,7 @@ module.exports.createMovie = (req, res, next) => {
     image,
     trailerLink,
     thumbnail,
-    movieId
+    movieId,
   } = req.body;
   const owner = req.user._id;
   Movie.create({
@@ -30,8 +30,8 @@ module.exports.createMovie = (req, res, next) => {
     trailerLink,
     thumbnail,
     movieId,
-    owner
-   })
+    owner,
+  })
     .then((movie) => res.send(movie))
     .catch((err) => {
       if (err.name === 'ValidationError') {
