@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { celebrate, Joi, errors } = require('celebrate');
 const routerUsers = require('./routes/users');
+const routerMovies = require('./routes/movies');
 
 const { PORT = 3000 } = process.env;
 const app = express();
@@ -19,5 +20,6 @@ app.use(cors({
 }));
 app.use(bodyParser.json());
 app.use(routerUsers);
+app.use(routerMovies);
 app.use(errors());
 app.listen(PORT);
