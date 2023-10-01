@@ -27,12 +27,12 @@ const movieSchema = new mongoose.Schema(
     nameRU: {
       type: String,
       required: true,
-      validate: /[я-яё0-9.-]/gi,
+      validate: /[a-яё0-9.-\s]/gi,
     },
     nameEN: {
       type: String,
       required: true,
-      validate: /[a-z0-9.-]/gi,
+      validate: /[a-z0-9.-\s]/gi,
     },
     image: {
       type: String,
