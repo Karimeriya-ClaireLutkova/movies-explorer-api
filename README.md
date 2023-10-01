@@ -26,3 +26,11 @@
 `npm run start` — запускает сервер   
 `npm run dev` — запускает сервер с hot-reload
 
+## Ссылки на проект
+
+IP 158.160.59.166
+
+Frontend https://practical.mesto.students.nomoredomainsrocks.ru
+
+
+Backend https://api.pract.mesto.students.nomoredomainsrocks.ru
