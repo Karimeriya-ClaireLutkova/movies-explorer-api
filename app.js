@@ -7,6 +7,8 @@ const { celebrate, Joi, errors } = require('celebrate');
 const routerUsers = require('./routes/users');
 const routerMovies = require('./routes/movies');
 const auth = require('./middlewares/auth');
+const { login, createUser } = require('./controllers/users');
+const NotFoundError = require('./errors/NotFoundError');
 
 const { PORT = 3000 } = process.env;
 const app = express();
