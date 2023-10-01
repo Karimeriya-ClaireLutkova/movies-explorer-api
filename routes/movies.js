@@ -12,7 +12,8 @@ router.post('/movies', celebrate({
     country: Joi.string().required(),
     director: Joi.string().required(),
     duration: Joi.number().integer().required(),
-    year: Joi.number().integer().required().min(1895).max(2023),
+    year: Joi.number().integer().required().min(1895)
+      .max(2023),
     description: Joi.string().required(),
     nameRU: Joi.string().required().regex(/[я-яё0-9.-]/gi),
     nameEN: Joi.string().required().regex(/[a-z0-9.-]/gi),
