@@ -10,10 +10,9 @@ const auth = require('./middlewares/auth');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { login, createUser } = require('./controllers/users');
 const NotFoundError = require('./errors/NotFoundError');
+const { DATABASE_URL, PORT } = require('./utils/constants');
 
-const { PORT = 3000 } = process.env;
 const app = express();
-const DATABASE_URL = 'mongodb://127.0.0.1:27017/bitfilmsdb';
 mongoose.connect(DATABASE_URL, {
   useNewUrlParser: true,
 });
