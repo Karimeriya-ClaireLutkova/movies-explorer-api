@@ -6,6 +6,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const { errors } = require('celebrate');
 const routes = require('./routes/index');
+const errorsHandlerCentral = require('./middlewares/errors');
+const limiter = require('./middlewares/limiter');
 const { requestLogger, errorLogger } = require('./middlewares/logger');
 const { DATABASE_URL, PORT } = require('./utils/constants');
 
@@ -21,14 +23,9 @@ app.use(cors({
 app.use(helmet());
 app.use(bodyParser.json());
 app.use(requestLogger);
+app.use(limiter);
 app.use(routes);
 app.use(errorLogger);
 app.use(errors());
-app.use((err, req, res, next) => {
-  const { statusCode = 500, message } = err;
-  res.status(statusCode).send({
-    message: statusCode === 500 ? 'На сервере произошла ошибка.' : message,
-  });
-  next();
-});
+app.use(errorsHandlerCentral);
 app.listen(PORT);
