@@ -11,7 +11,7 @@
   - добавления/удаления пользователей,
   - редактирования данных пользователя
 5. Реализована обработка ошибок.
-6. Проект можно посмотреть по ссылке https://github.com/Karimeriya-ClaireLutkova/movies-explorer-api/tree/level-1
+6. Проект можно посмотреть по ссылке https://github.com/Karimeriya-ClaireLutkova/movies-explorer-api
 ## Проект создан с использованием Visual Studio Code  и встроенными в него расширениями.
 ### *Планируется дальнейшая доработка проекта с использованием* **Java Script**.
 
@@ -30,7 +30,7 @@
 
 IP 158.160.59.166
 
-Frontend https://practical.mesto.students.nomoredomainsrocks.ru
+Frontend https://moviesYP.nomoredomainsrocks.ru
 
 
-Backend https://api.pract.mesto.students.nomoredomainsrocks.ru
+Backend https://api.moviesyp.students.nomoredomainsrocks.ru
