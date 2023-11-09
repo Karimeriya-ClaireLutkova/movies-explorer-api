@@ -18,7 +18,7 @@ mongoose.connect(DATABASE_URL, {
 
 app.use(cors({
   credentials: true,
-  origin: ['https://moviesYP.nomoredomainsrocks.ru'],
+  origin: ['https://moviesYP.nomoredomainsrocks.ru', 'http://localhost:3000'],
 }));
 app.use(helmet());
 app.use(bodyParser.json());
