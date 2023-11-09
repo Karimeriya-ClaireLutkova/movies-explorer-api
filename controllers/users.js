@@ -20,10 +20,9 @@ module.exports.createUser = (req, res, next) => {
     }))
     .then((data) => {
       const user = data;
-      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : DEV_KEY, { expiresIn: '7d' });
       user.password = undefined;
-      user.token = token;
-      res.status(201).send(user);
+      const token = jwt.sign({ _id: user._id }, NODE_ENV === 'production' ? JWT_SECRET : DEV_KEY, { expiresIn: '7d' });
+      res.status(201).send({ token });
     })
     .catch((err) => {
       if (err.code === 11000) {
