@@ -18,9 +18,9 @@ module.exports.createMovie = (req, res, next) => {
     movieId,
   } = req.body;
   const owner = '';
-  const imageNew = image;
+  let imageNew = '';
   const { url } = image.url;
-  imageNew.url = `https://api.nomoreparties.co/${url}`;
+  imageNew = `https://api.nomoreparties.co/${url}`;
   Movie.create({
     country,
     director,
