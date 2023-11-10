@@ -17,7 +17,10 @@ module.exports.createMovie = (req, res, next) => {
     thumbnail,
     movieId,
   } = req.body;
-  const owner = req.user._id;
+  const owner = '';
+  const imageNew = image;
+  const { url } = image.url;
+  imageNew.url = `https://api.nomoreparties.co/${url}`;
   Movie.create({
     country,
     director,
@@ -26,7 +29,7 @@ module.exports.createMovie = (req, res, next) => {
     description,
     nameRU,
     nameEN,
-    image,
+    imageNew,
     trailerLink,
     thumbnail,
     movieId,
