@@ -63,6 +63,15 @@ module.exports.getUserСurrent = (req, res, next) => {
 module.exports.updateUser = (req, res, next) => {
   const userId = req.user._id;
   const { name, email } = req.body;
+  User.findOne(email)
+    .then((user) => {
+      if (user) {
+        throw new ConflictError('Пользователь с таким email уже существует.');
+      }
+    })
+    .catch((err) => {
+      next(err);
+    });
   User.findByIdAndUpdate(userId, { name, email }, { new: true, runValidators: true })
     .then((user) => {
       if (user === null) {
