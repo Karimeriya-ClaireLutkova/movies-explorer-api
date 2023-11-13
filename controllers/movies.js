@@ -49,6 +49,7 @@ module.exports.getMovies = (req, res, next) => {
 };
 module.exports.deleteMovie = (req, res, next) => {
   const owner = req.user._id;
+  console.log(req, req.params._id, req.params.id);
   Movie.findById(req.params._id)
     .then((movie) => {
       if (movie === null) {
